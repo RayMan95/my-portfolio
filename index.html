@@ -5,285 +5,9 @@
     <!-- Full credit to https://github.com/ayushsaranGithuB/one-page-portfolios?tab=readme-ov-file for this template -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"></link>
     <title>Rayaan Fakier [WIP]</title>
-    <style>
-        /* Inter Font from Goole Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-        /* VARIABLES */
-        :root {
-            --accent-color: #47ebeb;
-            --background-color: #2a2a31;
-            --text-color: #fff;
-            --text-color-muted: #b9b9b9;
-
-            /* spacing */
-            --space-xs: 4px;
-            --space-sm: 8px;
-            --space-md: 16px;
-            --space-lg: 32px;
-            --space-xl: 64px;
-            --space-xxl: 128px;
-
-            /* typography */
-            --font-size-xs: 14px;
-            --font-size-sm: 16px;
-            --font-size-md: 18px;
-            --font-size-lg: 24px;
-            --font-size-xl: 28px;
-            --font-size-xxl: 88px;
-        }
-
-        body {
-            background-color: var(--background-color);
-            font-family: Inter, Arial, sans-serif;
-            margin: 0;
-            padding: 0 20px;
-            color: var(--text-color);
-        }
-
-        #page {
-            display: flex;
-            flex-direction: column;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding-top: var(--space-md);
-        }
-
-        /* LOGO AND NAVIGATION */
-
-        header {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        nav {
-
-            margin-left: auto;
-        }
-
-        .logo {
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-
-        }
-
-        nav ul {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-            margin: 0;
-        }
-
-        nav ul li a:link,
-        nav ul li a:visited {
-            color: var(--text-color);
-            opacity: 0.7;
-        }
-
-        /* TYPOGRAPHY */
-
-        a:link,
-        a:visited {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        h1 {
-            font-size: var(--font-size-xxl);
-            margin-bottom: var(--space-sm);
-        }
-
-        h2 {
-            font-size: var(--font-size-xl);
-            color: var(--accent-color);
-            margin-bottom: var(--space-lg);
-            font-weight: 200;
-            margin-top: var(--space-xl);
-        }
-
-        h3 {
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--space-sm);
-            font-weight: 400;
-        }
-
-        p {
-            font-size: var(--font-size-sm);
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--text-color-muted);
-            margin-bottom: var(--space-md);
-
-        }
-
-        /* SECTIONS  */
-
-        #about {
-            margin-top: var(--space-xxl);
-        }
-
-        #about h1 {
-            font-size: var(--font-size-xxl);
-            margin-bottom: var(--space-sm);
-        }
-
-        #about p {
-            font-size: var(--font-size-xl);
-            font-weight: 200;
-            line-height: 1.4;
-            color: var(--text-color);
-        }
-
-        section {
-            margin-top: var(--space-lg);
-            margin-bottom: var(--space-lg);
-        }
-
-        .card {
-            background: linear-gradient(90deg, #35353f 0%, #3d3b3e 50%, #3d3b3e 50%);
-            border-radius: 20px;
-            padding: var(--space-md) var(--space-md) var(--space-md);
-            border: 0.5px solid #484851;
-            margin-bottom: var(--space-lg);
-        }
-
-        .card p {
-            margin: var(--space-xs) 0;
-            font-size: var(--font-size-xs);
-        }
-
-        /* SKILLS */
-
-        #skills p {
-            line-height: 1.8;
-        }
-
-        /* EXPERIENCE */
-
-        #experience .job p.role {
-            font-size: var(--font-size-md);
-        }
-
-        /* RECENT WORK */
-
-        .project {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-            grid-template-rows: 1fr 3fr;
-            column-gap: var(--space-lg);
-            padding: var(--space-md) var(--space-lg);
-        }
-
-        .project .thumbnail {
-            grid-row: span 2;
-        }
-
-        .project img {
-            width: 100%;
-            margin-top: var(--space-md);
-            border-radius: 14px;
-        }
-
-        .project p a {
-            display: block;
-            margin-top: var(--space-md);
-        }
-
-        /* CONTACT  */
-
-        #contact {
-            text-align: center;
-        }
-
-        #contact p {
-            font-size: var(--font-size-lg);
-            font-weight: 200;
-            line-height: 1.4;
-            color: var(--text-color);
-        }
-
-
-        /* FOOTER */
-
-        footer {
-            margin-top: var(--space-xl);
-            padding: 0 0 var(--space-lg);
-            color: var(--text-color-muted);
-            text-align: center;
-        }
-
-        footer .social {
-            display: flex;
-            gap: var(--space-lg);
-            margin-bottom: var(--space-lg);
-            justify-content: center;
-            align-items: center;
-        }
-
-        footer .social a:hover svg {
-            fill: var(--accent-color);
-        }
-
-
-        /* MEDIA QUERIES */
-
-        @media screen and (max-width: 600px) {
-            :root {
-                --primary-color: #f9a826;
-                --secondary-color: #f9a826;
-                --accent-color: #47ebeb;
-                --background-color: #2a2a31;
-                --text-color: #fff;
-                --text-color-muted: #b9b9b9;
-
-                /* spacing */
-                --space-xs: 4px;
-                --space-sm: 8px;
-                --space-md: 16px;
-                --space-lg: 32px;
-                --space-xl: 64px;
-                --space-xxl: 128px;
-
-                /* typography */
-                --font-size-xs: 14px;
-                --font-size-sm: 16px;
-                --font-size-md: 18px;
-                --font-size-lg: 20px;
-                --font-size-xl: 24px;
-                --font-size-xxl: 48px;
-            }
-
-            header {
-                align-items: flex-start;
-            }
-
-            .logo {
-                font-size: var(--font-size-xl);
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 14px;
-                list-style: none;
-                align-items: flex-end;
-            }
-
-            section {
-                margin-top: var(--space-xl);
-                margin-bottom: var(--space-lg);
-            }
-
-            h2 {
-                margin-top: var(--space-lg);
-            }
-
-            .project {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -295,8 +19,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#portfolio">Recent Work</a></li>
+                    <li><a href="#experience-teaching">Teaching</a></li>
+                    <li><a href="#experience">Previous Work</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -308,62 +33,30 @@
                     Hi, I'm Rayaan.
                 </h1>
                 <p>
-                    IT Teacher at Roedean Senior School (SA).<br><br>
+                    I'm currently an IT Teacher at Roedean Senior School (SA).<br><br>
                     I've previously worked in Cybersecurity for a few years until I couldn't take the corporate life anymore.<br><br>
                     Current focus: IT learner academic support and AI integration in teaching and learning.<br>
                     Current career interests: EdTech and learning material development.
                 </p>
             </div>
-            <section id="skills">
-                <h2>Skills</h2>
-                <div class="skill card">
-                    <h3>
-                        Graphic Design &amp; Creative Direction
-                    </h3>
-                    <p>
-                        &bull; Building Responsive UI/UX Design for Web and Mobile. Creating Brand Strategy and Design
-                        Systems
-                        <br>
-                        &bull; Wireframing User Flows and delivering High-fidelity Prototypes for Developer Hand-off
+            <section id="experience-teaching">
+                <h2>Teaching Experience</h2>
+                <div class="job card">
+                    <h3 id="job">Roedean Senior School</h3>
+                    <p class="role">Locum IT Teacher</p>
+                    <p class="timeline">May 2025 &ndash; Dec 2025</p>
+                    <p class="responsibilities">
+                        Term 2: Teaching IT (IEB/Java) to grades 10 to 12. Included creating own lesson content, applications, homework and mini SBA tasks. Assisting with extra-curricular activities (eSports and Coding&Robotics), and other typical teacher duties.<br>
+                        Term 3: Academic support for IT learners and AI awareness, training, and integration into teaching and learning.
                     </p>
                 </div>
 
-                <div class="skill card">
-                    <h3>
-                        Front-End Development
-                    </h3>
-                    <p>
-                        &bull; Proficient in HTML, CSS &amp; JavaScript with 3yrs experience in React, Node.js & Express.
-                        <br>
-                        &bull; Familiar with User Testing &amp; Conversion Optimization Tools like Optimizely &amp; VWO.
-                    </p>
-                </div>
-
-                <div class="skill card">
-                    <h3>
-                        Back-End Development
-                    </h3>
-                    <p>
-                        &bull; Familiar with Git Workflow, Docker and CI/CD
-                        <br>
-                        &bull; Experience with MongoDB, MySQL, PostgreSQL databse setup and management
-                        <br>
-                        &bull; Building RESTful APIs and GraphQL based query systems
-                    </p>
-                </div>
-
-                <div class="skill card">
-                    <h3>
-                        Tools
-                    </h3>
-                    <p>
-                        &bull; Familiar with Figma &amp; the Adobe Creative Suite
-                        <br>
-                        &bull; Integration of CRM &amp; Analytics Plarforms like HubSpot, Klaviyo , Mailchimp , Google
-                        Analytics &amp; Hotjar.
-                        <br>
-                        &bull; Project Management through Trello , Asana , Slack ,
-                        Jira &amp; Confluence.
+                <div class="job card">
+                    <h3 id="job">Northcliff High School</h3>
+                    <p class="role">Locum IT Teacher</p>
+                    <p class="timeline">Jan 2025 &ndash; Mar 2025</p>
+                    <p class="responsibilities">
+                        Teaching IT (CAPS/Delphi) grade 10 & CAT grade 11. Included creating tests & memos, lesson content, applications, and tasks. Assisting with eSports extra-curricular activities, and other typical teacher duties.
                     </p>
                 </div>
             </section>
@@ -398,7 +91,7 @@
                         development team to ensure that the design was implemented correctly.
                     </p>
                 </div>
-                <div class="education">
+                <div id="education" class="education">
                     <h2>Education</h2>
 
                     <div class="school card">
