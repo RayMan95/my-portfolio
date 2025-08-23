@@ -107,7 +107,6 @@ p {
     line-height: 1.6;
     color: var(--text-color-muted);
     margin-bottom: var(--space-md);
-
 }
 
 /* SECTIONS  */
@@ -146,10 +145,14 @@ section {
     font-size: var(--font-size-xs);
 }
 
-/* SKILLS */
+/* TEACHING EXPERIENCE */
 
 #experience-teaching p {
     line-height: 1.8;
+}
+
+#experience-teaching p.timeline {
+    border-bottom-style: dotted;
 }
 
 /* EXPERIENCE */
@@ -158,30 +161,14 @@ section {
     font-size: var(--font-size-md);
 }
 
-/* RECENT WORK */
-
-.project {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 1fr 3fr;
-    column-gap: var(--space-lg);
-    padding: var(--space-md) var(--space-lg);
+#experience p.timeline {
+    border-bottom-style: dotted;
 }
 
-.project .thumbnail {
-    grid-row: span 2;
-}
+/* EDUCATION */
 
-.project img {
-    width: 100%;
-    margin-top: var(--space-md);
-    border-radius: 14px;
-}
-
-.project p a {
-    display: block;
-    margin-top: var(--space-md);
-}
+/* .education {
+} */
 
 /* CONTACT  */
 
